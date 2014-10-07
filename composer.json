@@ -1,0 +1,23 @@
+{
+    "name": "satrun77/viewtemplate",
+    "description": "This module allows CMS administrators to create partial templates that can be re-used in the contnet of the CMS pages",
+    "keywords": ["silverstripe", "view", "template", "partial template"],
+    "type": "silverstripe-module",
+    "version": "1.0.0-dev",
+    "homepage": "https://github.com/satrun77/silverstripe-viewtemplate",
+    "keywords": ["silverstripe", "pagetype", "template"],
+    "license": "MIT",
+    "authors": [{
+            "name": "Mohamed Alsharaf",
+            "email": "mohamed.alsharaf@gmail.com",
+            "homepage": "http://my.geek.nz",
+            "role": "Developer"
+        }],
+    "require": {
+        "silverstripe/framework": "~3.1",
+        "silverstripe/cms": "~3.1"
+    },
+    "support": {
+        "issues": "https://github.com/satrun77/silverstripe-viewtemplate/issues"
+    }
+}

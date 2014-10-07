@@ -1,0 +1,6 @@
+---
+name: viewtemplate
+---
+Page:
+  extensions:
+    - MO_ViewTemplatePageExtension
