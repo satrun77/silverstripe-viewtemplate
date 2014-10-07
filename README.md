@@ -8,7 +8,7 @@ This module allows CMS administrators to create partial templates that can be re
 ### 1. Download silverstripe-viewtemplate with composer.
 
 ``` bash
-$ php composer.phar require moo/viewtemplate:*
+$ php composer.phar require satrun77/viewtemplate:*
 ```
 
 ### 2. Clear CMS cache.
