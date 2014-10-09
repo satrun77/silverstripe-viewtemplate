@@ -1,12 +1,12 @@
 <?php
 
 /**
- * MO_ViewTemplatePageExtension is the admin model class to manage view templates
+ * ViewTemplatePageExtension is the admin model class to manage view templates
  *
  * @author Mohamed Alsharaf <mohamed.alsharaf@gmail.com>
  * @package viewtemplate
  */
-class MO_ViewTemplatePageExtension extends DataExtension {
+class ViewTemplatePageExtension extends DataExtension {
 	/**
 	 * Page setting field for module status
 	 *
@@ -47,7 +47,7 @@ class MO_ViewTemplatePageExtension extends DataExtension {
 		// If placeholders found
 		if(!empty($matches[1])) {
 			// Fetch view templates
-			$templates = DataObject::get('MO_ViewTemplate')->filter(array(
+			$templates = DataObject::get('ViewTemplate')->filter(array(
 					'Title' => $matches[1]
 				))->getIterator();
 
