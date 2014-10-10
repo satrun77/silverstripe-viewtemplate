@@ -7,9 +7,9 @@
  * @package viewtemplate
  */
 class ViewTemplateAdmin extends ModelAdmin {
-	public static $url_segment = 'viewtemplates';
-	public static $menu_title = 'Templates';
-	public static $managed_models = array('ViewTemplate');
-	public static $menu_icon = 'viewtemplate/images/icon.png';
+	private static $url_segment = 'viewtemplates';
+	private static $menu_title = 'Templates';
+	private static $managed_models = array('ViewTemplate');
+	private static $menu_icon = 'viewtemplate/images/icon.png';
 
 }

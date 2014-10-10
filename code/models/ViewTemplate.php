@@ -7,7 +7,7 @@
  * @package viewtemplate
  */
 class ViewTemplate extends DataObject {
-	public static $db = array(
+	private static $db = array(
 		'Title'			 => 'Varchar(127)',
 		'ViewTemplate'	 => 'Text',
 	);
