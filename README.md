@@ -1,34 +1,15 @@
 silverstripe-viewtemplate
 =========================
 
+[![Build Status](https://travis-ci.org/satrun77/silverstripe-viewtemplate.svg?branch=master)](https://travis-ci.org/satrun77/silverstripe-viewtemplate)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/satrun77/silverstripe-viewtemplate/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/satrun77/silverstripe-viewtemplate/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/satrun77/silverstripe-viewtemplate/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/satrun77/silverstripe-viewtemplate/?branch=master)
+
 This module allows CMS administrators to create partial templates that can be re-used in the contnet of the CMS pages.
-
-## Instalation
-
-### 1. Download silverstripe-viewtemplate with composer.
-
-``` bash
-$ php composer.phar require satrun77/viewtemplate:*
-```
-
-### 2. Clear CMS cache.
-* Login as administrator.
-* Navigation to http://yousite.com/dev/build
 
 ## Documentation
 
-### 1. Create a view template
-* On the left side of the CMS there should be a new menu item labeled "Templates".
-* Navigate to the "Templates" page to add a template title and content.
-* The content of the template can include SilverStripe markdown syntax.
-
-### 2. Using the view template
-* Assuming you have create a template with the following details:
-    - Title: Welcome
-    - View Template: `<% if $CurrentMember %>Welcome Back, $CurrentMember.FirstName<% end_if %>`
-- In the HTML editor you can place `{{Welcome}}` anywhere in the page content.
-- The module will replace the placeholder `{{Welcome}}` with the content of the view template.
-- By default the plugin is disabled in all page types. You can enable it in the page settings tab **Enable view template**.
+Full details of the documentation can be found [docs/en/index.md](docs/en/index.md)
 
 ## License
 
