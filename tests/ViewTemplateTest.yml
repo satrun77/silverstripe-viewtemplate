@@ -1,0 +1,19 @@
+ViewTemplate:
+    template1:
+        Title: template1
+        ViewTemplate: Dummy text from template 1
+
+    template2:
+        Title: template2
+        ViewTemplate: "<% if $CurrentMember %>Welcome Back, $CurrentMember.FirstName<% end_if %>"
+
+Page:
+  page1:
+    Title: Page 1 Title
+    Content: Hi page 1 {{template1}}
+    URLSegment: page1
+
+  page2:
+    Title: Page 2 Title
+    Content: "Hi page 2 {{template2}} <% if $CurrentMember %>I should not be here! $CurrentMember.FirstName<% end_if %>"
+    URLSegment: page2
