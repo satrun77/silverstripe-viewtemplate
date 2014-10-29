@@ -1,6 +1,7 @@
 silverstripe-viewtemplate
 =========================
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/682025e5-123b-4cd5-9d2a-85230bff9374/mini.png)](https://insight.sensiolabs.com/projects/682025e5-123b-4cd5-9d2a-85230bff9374)
 [![Build Status](https://travis-ci.org/satrun77/silverstripe-viewtemplate.svg?branch=master)](https://travis-ci.org/satrun77/silverstripe-viewtemplate)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/satrun77/silverstripe-viewtemplate/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/satrun77/silverstripe-viewtemplate/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/satrun77/silverstripe-viewtemplate/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/satrun77/silverstripe-viewtemplate/?branch=master)
