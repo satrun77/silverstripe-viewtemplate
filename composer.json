@@ -3,7 +3,6 @@
     "description": "This module allows CMS administrators to create partial templates that can be re-used in the contnet of the CMS pages",
     "keywords": ["silverstripe", "view", "template", "partial template"],
     "type": "silverstripe-module",
-    "version": "1.0.0-dev",
     "homepage": "https://github.com/satrun77/silverstripe-viewtemplate",
     "keywords": ["silverstripe", "pagetype", "template"],
     "license": "MIT",
