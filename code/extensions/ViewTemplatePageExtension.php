@@ -3,7 +3,7 @@
 /**
  * ViewTemplatePageExtension is the admin model class to manage view templates
  *
- * @author Mohamed Alsharaf <mohamed.alsharaf@gmail.com>
+ * @author  Mohamed Alsharaf <mohamed.alsharaf@gmail.com>
  * @package viewtemplate
  */
 class ViewTemplatePageExtension extends DataExtension {
@@ -12,9 +12,9 @@ class ViewTemplatePageExtension extends DataExtension {
 	 *
 	 * @var array
 	 */
-	private static $db = array(
+	private static $db = [
 		"EnableViewTemplate" => "Boolean",
-	);
+	];
 
 	public function __construct() {
 		parent::__construct();
@@ -35,7 +35,7 @@ class ViewTemplatePageExtension extends DataExtension {
 		$content = $this->owner->Content;
 
 		// Return original content
-		if(!$this->owner->EnableViewTemplate) {
+		if (!$this->owner->EnableViewTemplate) {
 			return $content;
 		}
 
@@ -47,6 +47,7 @@ class ViewTemplatePageExtension extends DataExtension {
 	 * Replaces placeholders within the $content property their actual value
 	 *
 	 * @param string $content
+	 *
 	 * @return string
 	 */
 	public function replacePlaceholders($content) {
@@ -54,15 +55,15 @@ class ViewTemplatePageExtension extends DataExtension {
 		preg_match_all("/{{(.*?)}}/", $this->owner->Content, $matches);
 
 		// If placeholders found
-		if(!empty($matches[1])) {
+		if (!empty($matches[1])) {
 			// Fetch view templates
-			$templates = DataObject::get('ViewTemplate')->filter(array(
-					'Title' => $matches[1]
-				))->getIterator();
+			$templates = DataObject::get('ViewTemplate')->filter([
+				                                                     'Title' => $matches[1]
+			                                                     ])->getIterator();
 
 			// Replace placeholders with their templates
-			foreach($matches[0] as $key => $templateHolder) {
-				if($templates->offsetExists($key)) {
+			foreach ($matches[0] as $key => $templateHolder) {
+				if ($templates->offsetExists($key)) {
 					// Remove <p> if TinyMCE added them
 					$content = str_replace('<p>' . $templateHolder . '</p>', $templateHolder, $content);
 					// Process the template

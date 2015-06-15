@@ -3,17 +3,18 @@
 /**
  * ViewTemplate is the database model class for the view template table
  *
- * @author Mohamed Alsharaf <mohamed.alsharaf@gmail.com>
+ * @author  Mohamed Alsharaf <mohamed.alsharaf@gmail.com>
  * @package viewtemplate
  */
 class ViewTemplate extends DataObject {
-	private static $db = array(
-		'Title'			 => 'Varchar(127)',
-		'ViewTemplate'	 => 'Text',
-	);
+	private static $db = [
+		'Title'        => 'Varchar(127)',
+		'ViewTemplate' => 'Text',
+	];
 
 	/**
 	 * Human-readable singular name.
+	 *
 	 * @var string
 	 * @config
 	 */
@@ -21,6 +22,7 @@ class ViewTemplate extends DataObject {
 
 	/**
 	 * Human-readable plural name
+	 *
 	 * @var string
 	 * @config
 	 */

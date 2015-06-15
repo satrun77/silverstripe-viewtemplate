@@ -3,7 +3,7 @@
 /**
  * ViewTemplateTest contains test cases for the module classes
  *
- * @author Mohamed Alsharaf <mohamed.alsharaf@gmail.com>
+ * @author  Mohamed Alsharaf <mohamed.alsharaf@gmail.com>
  * @package viewtemplate
  */
 class ViewTemplateTest extends FunctionalTest {
