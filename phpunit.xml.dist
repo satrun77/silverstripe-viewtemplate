@@ -18,6 +18,8 @@
                 <directory>tests/</directory>
                 <directory>_config/</directory>
                 <directory>images/</directory>
+                <directory>javascript/</directory>
+                <file>_config.php</file>
             </exclude>
         </whitelist>
     </filter>

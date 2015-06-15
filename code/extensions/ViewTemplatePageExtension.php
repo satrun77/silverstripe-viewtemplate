@@ -16,6 +16,15 @@ class ViewTemplatePageExtension extends DataExtension {
 		"EnableViewTemplate" => "Boolean",
 	);
 
+	public function __construct() {
+		parent::__construct();
+
+		// This may get called before the schema is created.
+		if (!DB::getConn()->isSchemaUpdating()) {
+			HtmlEditorConfig::get('cms')->setOption('viewtemplate', ViewTemplate::get()->map('Title')->toArray());
+		}
+	}
+
 	/**
 	 * Override the Content property from the page object
 	 *
