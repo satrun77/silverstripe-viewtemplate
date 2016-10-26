@@ -9,7 +9,7 @@
                 longname: this.editor.getLang('tinymce_viewtemplate.longname'),
                 author: 'Mohamed Alsharaf',
                 authorurl: 'http://my.geek.nz',
-                version: "1.0"
+                version: "1.0.1"
             };
         },
         createControl: function (n, cm) {
@@ -27,7 +27,7 @@
                 }
             });
 
-            jQuery.each(ssTinyMceConfig.viewtemplate, function (value, label) {
+            jQuery.each(tinyMCE.activeEditor.settings.viewtemplate, function (value, label) {
                 list.add(value, label);
             });
 
