@@ -1,20 +1,21 @@
 <?php
 
 /**
- * ViewTemplatePageExtension is the admin model class to manage view templates
+ * ViewTemplatePageExtension is the admin model class to manage view templates.
  *
  * @author  Mohamed Alsharaf <mohamed.alsharaf@gmail.com>
+ *
  * @package viewtemplate
  */
 class ViewTemplatePageExtension extends DataExtension
 {
     /**
-     * Page setting field for module status
+     * Page setting field for module status.
      *
      * @var array
      */
     private static $db = [
-        "EnableViewTemplate" => "Boolean",
+        'EnableViewTemplate' => 'Boolean',
     ];
 
     public function __construct()
@@ -28,7 +29,7 @@ class ViewTemplatePageExtension extends DataExtension
     }
 
     /**
-     * Override the Content property from the page object
+     * Override the Content property from the page object.
      *
      * @return string
      */
@@ -47,7 +48,7 @@ class ViewTemplatePageExtension extends DataExtension
     }
 
     /**
-     * Replaces placeholders within the $content property their actual value
+     * Replaces placeholders within the $content property their actual value.
      *
      * @param string $content
      *
@@ -56,13 +57,13 @@ class ViewTemplatePageExtension extends DataExtension
     public function replacePlaceholders($content)
     {
         // Find placeholders
-        preg_match_all("/{{(.*?)}}/", $this->owner->Content, $matches);
+        preg_match_all('/{{(.*?)}}/', $this->owner->Content, $matches);
 
         // If placeholders found
         if (!empty($matches[1])) {
             // Fetch view templates
             $templates = DataObject::get('ViewTemplate')->filter([
-                                                                     'Title' => $matches[1]
+                                                                     'Title' => $matches[1],
                                                                  ])->getIterator();
 
             // Replace placeholders with their templates
@@ -85,16 +86,16 @@ class ViewTemplatePageExtension extends DataExtension
     }
 
     /**
-     * Add an element to the page settings tab to set the status of this module (enabled or not enabled)
+     * Add an element to the page settings tab to set the status of this module (enabled or not enabled).
      *
      * @param \FieldList $fields
      */
     public function updateSettingsFields(\FieldList $fields)
     {
         $field = new FieldGroup(
-            new CheckboxField('EnableViewTemplate', _t("ViewTemplate.YES", "Yes"), 0)
+            new CheckboxField('EnableViewTemplate', _t('ViewTemplate.YES', 'Yes'), 0)
         );
-        $field->setTitle(_t("ViewTemplate.ViewTemplate", "Enable view template"));
-        $fields->addFieldToTab("Root.Settings", $field);
+        $field->setTitle(_t('ViewTemplate.ViewTemplate', 'Enable view template'));
+        $fields->addFieldToTab('Root.Settings', $field);
     }
 }

@@ -1,9 +1,10 @@
 <?php
 
 /**
- * ViewTemplate is the database model class for the view template table
+ * ViewTemplate is the database model class for the view template table.
  *
  * @author  Mohamed Alsharaf <mohamed.alsharaf@gmail.com>
+ *
  * @package viewtemplate
  */
 class ViewTemplate extends DataObject
@@ -22,7 +23,7 @@ class ViewTemplate extends DataObject
     private static $singular_name = 'View Template';
 
     /**
-     * Human-readable plural name
+     * Human-readable plural name.
      *
      * @var string
      * @config

@@ -1,9 +1,10 @@
 <?php
 
 /**
- * ViewTemplateTest contains test cases for the module classes
+ * ViewTemplateTest contains test cases for the module classes.
  *
  * @author  Mohamed Alsharaf <mohamed.alsharaf@gmail.com>
+ *
  * @package viewtemplate
  */
 class ViewTemplateTest extends FunctionalTest
@@ -29,15 +30,15 @@ class ViewTemplateTest extends FunctionalTest
     public function testRenderTemplatePlaceholder()
     {
         // Create page object
-        $page = $this->objFromFixture('Page', 'page1');
-        $templateTitle = 'template1';
+        $page                = $this->objFromFixture('Page', 'page1');
+        $templateTitle       = 'template1';
         $templatePlaceHolder = '{{' . $templateTitle . '}}';
 
         // Assert: render page
         $this->assertContains($templatePlaceHolder, $page->Content());
 
         // Create template
-        $template = $this->objFromFixture('ViewTemplate', $templateTitle);
+        $template            = $this->objFromFixture('ViewTemplate', $templateTitle);
         $templatePlaceHolder = '{{' . $template->Title . '}}';
 
         // Page disable template view
@@ -76,7 +77,7 @@ class ViewTemplateTest extends FunctionalTest
 
         // Get Page settings fields
         $fields = $page->getSettingsFields();
-        $field = $fields->dataFieldByName('EnableViewTemplate');
+        $field  = $fields->dataFieldByName('EnableViewTemplate');
 
         // Assert view template field is added
         $this->assertTrue($field !== null);
@@ -89,10 +90,10 @@ class ViewTemplateTest extends FunctionalTest
         $this->logInWithPermission('ADMIN');
 
         // Create page object & template
-        $page = $this->objFromFixture('Page', 'page2');
+        $page                     = $this->objFromFixture('Page', 'page2');
         $page->EnableViewTemplate = true;
-        $template = $this->objFromFixture('ViewTemplate', 'template2');
-        $templatePlaceHolder = '{{' . $template->Title . '}}';
+        $template                 = $this->objFromFixture('ViewTemplate', 'template2');
+        $templatePlaceHolder      = '{{' . $template->Title . '}}';
 
         // Assert: render page with view template
         $content = $page->Content();
