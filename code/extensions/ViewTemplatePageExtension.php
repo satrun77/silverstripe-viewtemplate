@@ -62,20 +62,21 @@ class ViewTemplatePageExtension extends DataExtension
         // If placeholders found
         if (!empty($matches[1])) {
             // Fetch view templates
+            /** @var DataList $templates */
             $templates = DataObject::get('ViewTemplate')->filter([
-                                                                     'Title' => $matches[1],
-                                                                 ])->getIterator();
+                    'Title' => $matches[1],
+                ]);
 
             // Replace placeholders with their templates
-            foreach ($matches[0] as $key => $templateHolder) {
-                if ($templates->offsetExists($key)) {
-                    // Remove <p> if TinyMCE added them
-                    $content = str_replace('<p>' . $templateHolder . '</p>', $templateHolder, $content);
-                    // Process the template
-                    $template = SSViewer::fromString($templates->offsetGet($key)->ViewTemplate)->process($this->owner);
-                    // Replace the placeholder with its template
-                    $content = str_replace($templateHolder, $template, $content);
-                }
+            foreach ($templates as $template) {
+                // Get template placeholder
+                $templateHolder = $template->getPlaceHolder();
+                // Remove <p> if TinyMCE added them
+                $content = str_replace('<p>' . $templateHolder . '</p>', $templateHolder, $content);
+                // Process the template
+                $templateContent = SSViewer::fromString($template->ViewTemplate)->process($this->owner);
+                // Replace the placeholder with its template
+                $content = str_replace($templateHolder, $templateContent, $content);
             }
         }
 

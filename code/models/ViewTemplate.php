@@ -29,4 +29,14 @@ class ViewTemplate extends DataObject
      * @config
      */
     private static $plural_name = 'View Templates';
+
+    /**
+     * Return template placeholder.
+     *
+     * @return string
+     */
+    public function getPlaceHolder()
+    {
+        return '{{' . $this->Title . '}}';
+    }
 }
