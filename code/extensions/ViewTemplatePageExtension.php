@@ -23,7 +23,7 @@ class ViewTemplatePageExtension extends DataExtension
         parent::__construct();
 
         // This may get called before the schema is created.
-        if (!DB::getConn()->isSchemaUpdating()) {
+        if (!DB::get_schema()->isSchemaUpdating()) {
             $htmlEditorNames = Config::inst()->get('ViewTemplate', 'htmleditor_names');
             if (is_array($htmlEditorNames)) {
                 foreach ($htmlEditorNames as $htmlEditorName) {
