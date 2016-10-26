@@ -24,7 +24,12 @@ class ViewTemplatePageExtension extends DataExtension
 
         // This may get called before the schema is created.
         if (!DB::getConn()->isSchemaUpdating()) {
-            HtmlEditorConfig::get('cms')->setOption('viewtemplate', ViewTemplate::get()->map('Title')->toArray());
+            $htmlEditorNames = Config::inst()->get('ViewTemplate', 'htmleditor_names');
+            if (is_array($htmlEditorNames)) {
+                foreach ($htmlEditorNames as $htmlEditorName) {
+                    HtmlEditorConfig::get($htmlEditorName)->setOption('viewtemplate', ViewTemplate::get()->map('Title')->toArray());
+                }
+            }
         }
     }
 

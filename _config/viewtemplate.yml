@@ -4,3 +4,7 @@ name: viewtemplate
 Page:
   extensions:
     - ViewTemplatePageExtension
+
+ViewTemplate:
+  htmleditor_names:
+    - cms
